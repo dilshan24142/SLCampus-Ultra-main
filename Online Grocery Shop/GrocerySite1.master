@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="GrocerySite.master.cs" Inherits="PerfumeMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Online Grocery Shop</title>
+    <link rel="Stylesheet" href="Styles/Main.css" />
+    <link rel="Stylesheet" href="Styles/Menu.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            height: 20px;
+            margin-left: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="formMain" runat="server">
+        <div class="container">
+            <div class="divbody">
+                <div>
+                    <ul class="menuTemplate4 decor4_1">
+                        <li></li>
+                        <li class="separator"></li>
+                        <li></li>
+                        <li class="separator"></li>
+                        <li></li>
+                        <li class="separator"></li>
+                        <li>
+                            <div class="header">
+
+                    <div class="cartpanel">
+                        <div style="float: right">
+                            <asp:LinkButton ID="ltHi" runat="server" Text="Hi , " Visible="false"/> <asp:LinkButton ID="lbluname" runat="server"></asp:LinkButton>&nbsp;
+                          <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click" CausesValidation="false" Text="Logout" Visible="false"/>&nbsp;&nbsp;
+                            
+                            <asp:LinkButton ID="lbtcart" runat="server"  href="Cart.aspx" >
+                                Cart(<asp:Literal ID="ltitemCount" runat="server" Text="0"/>)
+                            </asp:LinkButton>&nbsp;&nbsp;<asp:LinkButton ID="lbtoredrhistory" runat="server" Text="Order History" OnClick="lbtoredrhistory_Click" Visible="false"/>
+                        </div></div>
+                <div style="float: right; margin-right: 5px; margin-top: 2px; width: 680px;">
+                        <div style="float: right; padding-left: 5px;">
+                               </div><asp:ScriptManager ID="login" runat="server" />
+                        <asp:UpdatePanel ID="upllogin" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <div id="dvsignin" runat="server" style="float: right; margin-top: 4px;" visible="false">
+                                    <label for="loginUname"><b>UserName :</b></label> <asp:TextBox ID="loginUname" runat="server" CssClass="logintxtU" placeholder="Enter UserName" />
+                                    <asp:RequiredFieldValidator ID="rvu" runat="server" ErrorMessage="*" ControlToValidate="loginUname" ForeColor="#990000" />
+                                    <label for="Pass"><b>Password :</b></label> <asp:TextBox ID="Pass" runat="server" TextMode="Password" CssClass="logintxtU" placeholder="Enter Password" />
+                                    <asp:RequiredFieldValidator ID="rvp" runat="server" ErrorMessage="*" ControlToValidate="Pass" ForeColor="#990000" />
+                                    <asp:LinkButton ID="cancel" runat="server" Text="Close" CssClass="cancel" CausesValidation="false" OnClick="cancel_Click" />
+                                </div>
+                                <div id="signini" runat="server" style="float: right; margin-top: 3px;">
+                                    </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+
+                    </div>
+                 </a></li><li class="separator"></li>
+                        <li><a href="Admin/Login.aspx"><li class="separator"></li>
+                        </a><li>
+                            <div class="search">
+                                <div style="float: right">
+                                    <asp:TextBox ID="txtsearch" runat="server" CssClass="txtserach" />
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="footer">
+                    <div class="copyright">
+                        <a href="home.html" />
+                    </div><div class="footer_links">
+                        <a href="AboutUs.aspx"> <a href="Contact.aspx"> </a></div></div></div></div></form></body></html>

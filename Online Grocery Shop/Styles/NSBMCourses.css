@@ -1,0 +1,120 @@
+/* NSBMCourses.css */
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Dark Gray */
+}
+
+p {
+    font-size: 16px;
+    color: #666; /* Gray */
+    margin-bottom: 20px;
+}
+
+.course-category {
+    margin-bottom: 40px;
+}
+/* NSBM.css */
+
+/* Photo slot styling */
+.photo-slot {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .photo-slot img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+/* Description slot styling */
+.description-slot {
+    margin-bottom: 20px;
+}
+
+    .description-slot h2 {
+        color: #004080;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .description-slot p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+/* About campus styling */
+.about-campus {
+    margin-bottom: 20px;
+}
+
+    .about-campus h2 {
+        color: #004080;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .about-campus p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+/* Link slot styling */
+.link-slot {
+    text-align: center;
+}
+
+    .link-slot .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #004080;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        .link-slot .button:hover {
+            background-color: #00264d;
+        }
+
+    .course-category h2 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #4CAF50; /* Green */
+        margin-bottom: 10px;
+    }
+
+.course {
+    background-color: #f9f9f9; /* Light Gray */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+    .course img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .course h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333; /* Dark Gray */
+        margin-bottom: 10px;
+    }
+
+    .course p {
+        font-size: 16px;
+        color: #666; /* Gray */
+        margin-bottom: 10px;
+    }

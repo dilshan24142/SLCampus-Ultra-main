@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="GSADMIN.master.cs" Inherits="Admin_PADMIN" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Styles/Main.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="adminContainer">
+            <div class="adminBody">
+                <div class="aminHead">
+                    <span class="lText"> ADMIN  Panel</span>
+                    <div class="info">
+                        Hi ,
+                        <asp:Label ID="loggedUser" runat="server" Text="Guest" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="lbtLogout" runat="server" Text="SignOut" CausesValidation="false" OnClick="lbtLogout_Click" />
+                    </div>
+                </div>
+                <div class="adminContent">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="adminMenu">
+                    <asp:TreeView ID="tvAdminMenu" ExpandDepth="1" runat="server" ShowLines="true" NodeStyle-CssClass="menu"
+                        SelectedNodeStyle-CssClass="selected" OnSelectedNodeChanged="tvAdminMenu_SelectedNodeChanged">
+                        <Nodes>
+                            <asp:TreeNode Text="  ADMIN HOME PANEL SLC ULTRA TEAM" NavigateUrl="#">
+                                <asp:TreeNode Text="MANAGEMENT" Value="1" NavigateUrl="#">
+                                    <asp:TreeNode Text=" Internship MANAGEMENT" Value="13" NavigateUrl="~/Admin/ManageProducts.aspx" />
+                                
+                                <asp:TreeNode Text="Gazatte & Job MANAGEMENT" Value="2" NavigateUrl="~/Admin/ManageProducts - Copy.aspx">
+ 
+</asp:TreeNode></asp:TreeNode>
+                                <asp:TreeNode Text="USERS" Value="3" NavigateUrl="~/Admin/ManageCustomers.aspx">
+                                    <asp:TreeNode Text="MANAGE USERS" Value="23" NavigateUrl="~/Admin/ManageCustomers.aspx" />
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="COUNSELOR REQUESTS" Value="4" NavigateUrl="~/Admin/ManageOrders.aspx">
+                                    <asp:TreeNode Text="MANAGE  COUNSELOR REQUESTS" Value="23" NavigateUrl="~/Admin/ManageOrders.aspx" />
+                                    <asp:TreeNode Text="VIEW COUNSELOR REQUESTS" Value="24" NavigateUrl="~/Admin/ViewOrders.aspx" />
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="STUDENETS  REQUESTS" Value="5" NavigateUrl="~/Admin/Reviews.aspx">
+                                    <asp:TreeNode Text=" VIEW STUDENETS  REQUESTS" Value="41" NavigateUrl="~/Admin/Reviews.aspx" />
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="ADMIN" Value="6" NavigateUrl="~/Admin/AddAdmin.aspx">
+                                    <asp:TreeNode Text="ADD ADMIN" Value="51" NavigateUrl="~/Admin/AddAdmin.aspx" />
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

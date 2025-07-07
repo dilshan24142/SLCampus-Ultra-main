@@ -1,0 +1,122 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.form-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+    .form-input.file {
+        padding: 3px;
+    }
+
+.btn-submit {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+
+/* Blog post styles */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.post-panel {
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+}
+
+    .post-panel h3 {
+        margin-top: 0;
+    }
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.post-video-link {
+    display: block;
+    margin-top: 10px;
+}
+
+.btn-comment {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+    .btn-comment:hover {
+        background-color: #218838;
+    }
+
+/* Search bar styles */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.input-search {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px 0 0 5px;
+}
+
+.btn-search {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+    .btn-search:hover {
+        background-color: #0056b3;
+    }

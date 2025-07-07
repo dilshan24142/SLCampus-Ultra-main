@@ -1,0 +1,236 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="GrocerySite.master.cs" Inherits="PerfumeMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>SL Campus Ultra</title>
+    <link rel="stylesheet" href="Styles/Main.css" />
+    <link rel="stylesheet" href="Styles/Menu.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .header {
+            width: 100%;
+            background-color: #004080;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+        .right-panel {
+            float: right;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .social-media {
+            display: flex;
+            align-items: center;
+        }
+        .social-media img {
+            margin-left: 10px;
+            width: 24px;
+            height: 24px;
+        }
+        .login-panel,
+        .cart-panel {
+            margin-left: 20px;
+        }
+        .login-panel input,
+        .cart-panel img {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .menu {
+            width: 100%;
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+            color: white;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #ffcc00;
+        }
+        .search-box {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .search-box input {
+            padding: 5px;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .search-box button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #ffcc00;
+            color: black;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-box button:hover {
+            background-color: #e6b800;
+        }
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            width: 100%;
+            background-color: #333;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+        .footer-links a {
+            margin: 0 10px;
+            color: #ffcc00;
+            text-decoration: none;
+            transition: text-decoration 0.3s;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .marquee {
+            color: white;
+            background-color: #ff0000;
+            padding: 10px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .drop {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .drop a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .drop a:hover {
+            background-color: #575757;
+        }
+        .menu li:hover .drop {
+            display: block;
+        }
+        .auto-style3 {
+            width: 100%;
+            text-align: center;
+            color: white;
+            height: 14px;
+            padding: 20px 0;
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <form id="formMain" runat="server">
+        <div class="auto-style3">
+            
+            <div class="right-panel">
+                <div class="social-media">
+                    <a href="http://www.facebook.com" target="_blank">
+                        <img src="Images/fb.png" alt="Facebook" />
+                    </a>
+                    <a href="http://www.twitter.com" target="_blank">
+                        <img src="Images/twitter.png" alt="Twitter" />
+                    </a>
+                </div>
+                <div class="login-panel">
+                    <asp:ScriptManager ID="login" runat="server" />
+                    <asp:UpdatePanel ID="upllogin" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div id="dvsignin" runat="server" style="display:none;">
+                                <label for="loginUname"><b>Username:</b></label>
+                                <asp:TextBox ID="loginUname" runat="server" placeholder="Enter Username" />
+                                <asp:RequiredFieldValidator ID="rvu" runat="server" ErrorMessage="*" ControlToValidate="loginUname" ForeColor="#990000" />
+                                <label for="Pass"><b>Password:</b></label>
+                                <asp:TextBox ID="Pass" runat="server" TextMode="Password" placeholder="Enter Password" />
+                                <asp:RequiredFieldValidator ID="rvp" runat="server" ErrorMessage="*" ControlToValidate="Pass" ForeColor="#990000" />
+                                <asp:Button ID="signin" runat="server" Text="Login" OnClick="signin_Click" />
+                                <asp:LinkButton ID="cancel" runat="server" Text="Close" OnClick="cancel_Click" />
+                            </div>
+                            <div id="signini" runat="server">
+                                <asp:Button ID="btnsingin" runat="server" Text="Signin" OnClick="btnsingin_Click" />
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <div class="cart-panel">
+                    <asp:LinkButton ID="ltHi" runat="server" Text="Hi," Visible="false" /> 
+                    <asp:LinkButton ID="lbluname" runat="server"></asp:LinkButton>
+                    <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click" Text="Logout" Visible="false" />
+                    &nbsp;<asp:LinkButton ID="lbtcart" runat="server" href="Cart.aspx">
+                        Wish List(<asp:Literal ID="ltitemCount" runat="server" Text="0" />)
+                    </asp:LinkButton><asp:LinkButton ID="lbtoredrhistory" runat="server" Text="Order History" OnClick="lbtoredrhistory_Click" Visible="false" />
+                </div>
+            </div>
+        </div>
+
+       <div class="menu">
+    <ul>
+        <li><a href="Home.aspx">Home</a></li>
+        <li>
+            <a href="javascript:void(0)">Gazettes & Job/Interns Finder</a>
+            <div class="drop">
+                <a href="Fruits.aspx?C=1">Gazettes & Jobs</a>
+                <a href="Vegetables.aspx?C=2">Internships</a>
+            </div>
+        
+        <li><a href="CommunityBlog.aspx">Blog & Community.Slc</a></li>
+        <li><a href="Contact.aspx">Counseling.Slc</a></li>
+         </li><li><a href="AboutUs.aspx">Help.Slc</a></li>
+        <li><a href="Admin/Login.aspx">Slc.Admins</a></li>
+        <li class="search-box">
+            <asp:TextBox ID="txtsearch" runat="server" placeholder="Search..." />
+            <asp:Button ID="btnsearch" runat="server" Text="Search" OnClick="btnsearch_Click" />
+        </li>
+    </ul>
+</div>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        
+        
+    </form>
+</body>
+</html>
